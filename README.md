@@ -36,3 +36,19 @@ A real-time messaging application built with Node.js, Express, Socket.io, and Mo
 └── views/              # EJS templates
     └── index.ejs       # Main view
 
+
+## Prerequisites
+
+Before running this application, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [MongoDB](https://www.mongodb.com/) (running locally on port 27017)
+- npm (comes with Node.js)
+
+## Installation
+
+1. **Clone the repository** (or navigate to the project directory):
+   ```bash
+   cd "WhatsApp clone"
+
+   
