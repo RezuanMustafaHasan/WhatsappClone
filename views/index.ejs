@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Clone</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="user-selection">
+        <div class="select-group">
+          <label for="sender">Sender:</label>
+          <select id="sender">
+            <option value="">Select Sender</option>
+            <% users.forEach(user => { %>
+              <option value="<%= user._id %>"><%= user.username %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="receiver">Receiver:</label>
+          <select id="receiver">
+            <option value="">Select Receiver</option>
+            <% users.forEach(user => { %>
+              <option value="<%= user._id %>"><%= user.username %></option>
+            <% }) %>
+          </select>
+        </div>
+        <button id="create-user-btn">Create New ID</button>
+      </div>
+    </header>
+    
+    <main>
+      <div class="chat-container">
+        <div id="messages" class="messages"></div>
+        
+        <div class="message-input">
+          <input type="text" id="message" placeholder="Type a message..." disabled>
+          <button id="send-btn" disabled>Send</button>
+        </div>
+      </div>
+    </main>
+    
+    <div id="user-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Create New User</h2>
+        <input type="text" id="username" placeholder="Enter username">
+        <button id="submit-user">Create</button>
+        <p id="error-message"></p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
